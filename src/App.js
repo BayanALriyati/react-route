@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar  from './components/Navbar';
+import Todo  from './components/Todo';
+import Register  from './components/Register';
+import Login  from './components/Login';
+import React from 'react';
+import { Routes , Route} from 'react-router-dom';
+
+function App() {  
+    return(
+       <div>
+         <Navbar />
+         <Routes>
+         <Route path='/Todo' component={<Todo/>} element={<Todo/>}/>
+         <Route path='/Register' component={<Register/>} element={<Register/>}/>
+         <Route path='/Login' component={<Login/>} element={<Login/>}/>
+         </Routes>
+       </div>
+    );
+  }
+
 
 export default App;
